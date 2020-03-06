@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/vinistock/has_encrypted_field/workflows/Ruby/badge.svg?branch=master)](https://github.com/vinistock/has_encrypted_field/actions)
+[![Build Status](https://github.com/vinistock/has_encrypted_field/workflows/Ruby/badge.svg?branch=master)](https://github.com/vinistock/has_encrypted_field/actions) [![Gem Version](https://badge.fury.io/rb/has_encrypted_field.svg)](https://badge.fury.io/rb/has_encrypted_field)
 
 # HasEncryptedField
 
