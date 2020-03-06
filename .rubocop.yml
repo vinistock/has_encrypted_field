@@ -1,0 +1,22 @@
+require:
+  - rubocop-performance
+  - rubocop-minitest
+
+AllCops:
+  Exclude:
+  - coverage/**/*
+  - vendor/bundle/**/*
+Layout/LineLength:
+  Max: 140
+Style/GuardClause:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/StringLiteralsInInterpolation:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
