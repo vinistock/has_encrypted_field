@@ -5,7 +5,7 @@ require "has_encrypted_field/configuration"
 require "active_support/concern"
 require "active_support/message_encryptor"
 
-module HasEncryptedField
+module HasEncryptedField # :nodoc:
   extend ActiveSupport::Concern
 
   class << self
@@ -24,17 +24,23 @@ module HasEncryptedField
     end
   end
 
+  # ClassMethods
+  #
+  # These methods are added to classes that include
+  # the HasEncryptedField module.
   module ClassMethods
+    # rubocop:disable Naming/PredicateName
     def has_encrypted_field(attribute)
       class_eval(<<~ACCESSORS, __FILE__, __LINE__ + 1)
-          def #{attribute}
-            HasEncryptedField.encryptor.decrypt_and_verify(self[:#{attribute}])
-          end
+        def #{attribute}
+          HasEncryptedField.encryptor.decrypt_and_verify(self[:#{attribute}])
+        end
 
-          def #{attribute}=(value)
-            self[:#{attribute}] = HasEncryptedField.encryptor.encrypt_and_sign(value)
-          end
+        def #{attribute}=(value)
+          self[:#{attribute}] = HasEncryptedField.encryptor.encrypt_and_sign(value)
+        end
       ACCESSORS
     end
+    # rubocop:enable Naming/PredicateName
   end
 end

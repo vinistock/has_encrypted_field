@@ -46,7 +46,3 @@ HasEncryptedField.configure do |config|
   config.secret_key = Rails::Secrets.key # master.key or ENV["RAILS_MASTER_KEY"]
 end
 ```
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/vinistock/has_encrypted_field.
