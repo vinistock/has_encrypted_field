@@ -35,7 +35,7 @@ p user
 => #<User id: 1, email: "eXhzeEJ1ejRvOVE2VGFiU0V6Y0NPMWJybjd6a005c1F3RGh0R3...">
 
 # The reader decrypts
-p user.email
+p user.decrypted_email
 => "user@example.com"
 ```
 
@@ -43,6 +43,12 @@ p user.email
 
 ```ruby
 HasEncryptedField.configure do |config|
-  config.secret_key = Rails::Secrets.key # master.key or ENV["RAILS_MASTER_KEY"]
+  config.secret_key = ENV["RAILS_MASTER_KEY"] || contents of master.key
 end
 ```
+
+### Warning
+
+Remember that using this gem to save encrypted fields to the database will always require the original master key in order to decrypt data.
+
+It will not be possible to recover data encrypted if the original master key is lost.

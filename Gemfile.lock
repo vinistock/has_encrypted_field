@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     has_encrypted_field (0.1.0)
-      rails (>= 5.0.0)
+      activerecord (>= 5.0.0)
 
 GEM
   remote: https://rubygems.org/

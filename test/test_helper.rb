@@ -12,10 +12,6 @@ require "sqlite3"
 FAKE_KEY = "\xEA\x87\x99!]\xC8 \x17\xA5\x89/f\xF5Z\xACF\xA25\x887\xABX\xA1;<\x96\xC3r\xFEz\"\f"
 ENV["RAILS_MASTER_KEY"] = FAKE_KEY
 
-HasEncryptedField.configure do |config|
-  config.secret_key = FAKE_KEY
-end
-
 ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: ":memory:")
 ActiveRecord::Schema.define do
   create_table :users, force: true do |t|
