@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    has_encrypted_field (0.1.0)
+    has_encrypted_field (0.2.0)
       activerecord (>= 5.0.0)
 
 GEM
