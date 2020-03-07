@@ -2,9 +2,9 @@
 
 # HasEncryptedField
 
-This gem provides support for encrypted attributes for Rails models.
+This gem provides support for encrypted attributes for models based on activerecord.
 
-It will encrypt the desired values inside model instances.
+It will encrypt the desired values inside model instances and save encrypted values to the database.
 
 ## Installation
 
@@ -37,6 +37,10 @@ p user
 # The reader decrypts
 p user.decrypted_email
 => "user@example.com"
+
+# Pluck decrypted fields
+p User.pluck_decrypted(:email)
+=> ["user@example.com"]
 ```
 
 ### Available configuration and defaults
