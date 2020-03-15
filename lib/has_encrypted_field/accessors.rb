@@ -19,6 +19,8 @@ module HasEncryptedField # :nodoc:
           self[:#{attribute}] = HasEncryptedField.encryptor.encrypt_and_sign(value)
         end
       ACCESSORS
+
+      HasEncryptedField.register(to_s, attribute)
     end
     # rubocop:enable Naming/PredicateName
   end

@@ -1,3 +1,7 @@
+## 0.3.0 ##
+
+* Make it possible to pluck regular fields among encrypted ones ([@vinistock])
+
 ## 0.2.0 ##
 
 * Add pluck_decrypted ([@vinistock])

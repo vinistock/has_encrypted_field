@@ -25,4 +25,10 @@ class AccessorsTest < Minitest::Test
     refute_equal "user@example.com", user[:email]
     assert_equal "user@example.com", user.decrypted_email
   end
+
+  def test_registers_field
+    HasEncryptedField.expects(:register).with("User", :name)
+
+    User.has_encrypted_field :name
+  end
 end

@@ -41,6 +41,10 @@ p user.decrypted_email
 # Pluck decrypted fields
 p User.pluck_decrypted(:email)
 => ["user@example.com"]
+
+# Pluck including encrypted and regular fields
+p User.pluck_decrypted(:id, :email)
+=> [[1, "user@example.com"]]
 ```
 
 ### Available configuration and defaults

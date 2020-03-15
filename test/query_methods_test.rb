@@ -17,4 +17,11 @@ class QueryMethodsTest < Minitest::Test
 
     assert_equal %w[user_1@example.com user_2@example.com], User.pluck_decrypted(:email)
   end
+
+  def test_pluck_decrypted_including_other_fields
+    attributes = User.pluck_decrypted(:id, :email)
+    expected = [[@user1.id, "user_1@example.com"], [@user2.id, "user_2@example.com"]]
+
+    assert_equal expected, attributes
+  end
 end

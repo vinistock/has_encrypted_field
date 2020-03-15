@@ -22,5 +22,14 @@ module HasEncryptedField # :nodoc:
     def configure
       yield(configuration)
     end
+
+    def registered_fields
+      @registered_fields ||= {}
+    end
+
+    def register(class_name, field)
+      registered_fields[class_name] ||= []
+      registered_fields[class_name] << field
+    end
   end
 end
