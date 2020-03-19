@@ -12,6 +12,8 @@ module HasEncryptedField # :nodoc:
       attributes.length == 1 ? decrypt_simple(attributes) : decrypt_nested(attributes)
     end
 
+    private
+
     def decrypt_nested(attributes)
       encrypted_fields = HasEncryptedField.registered_fields[to_s]
 
