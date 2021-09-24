@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/vinistock/has_encrypted_field/workflows/Ruby/badge.svg?branch=master)](https://github.com/vinistock/has_encrypted_field/actions) [![Gem Version](https://badge.fury.io/rb/has_encrypted_field.svg)](https://badge.fury.io/rb/has_encrypted_field)
+This unfinished experiment is no longer active. It did not work and should not be used.
 
 # HasEncryptedField
 
@@ -8,15 +8,7 @@ It will encrypt the desired values inside model instances and save encrypted val
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem "has_encrypted_field"
-```
-
-And then execute:
-
-    $ bundle install
+Not published
 
 ## Usage
 
@@ -25,7 +17,7 @@ Include the `HasEncryptedField` module inside the desired models and declare fie
 ```ruby
 class User < ApplicationRecord
   include HasEncryptedField
-  
+
   has_encrypted_field :email
 end
 
